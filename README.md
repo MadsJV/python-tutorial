@@ -10,8 +10,8 @@ This project uses the following third-party software and assets:
 
 ### Icons / Image assets
 - Material Icons — https://fonts.google.com/icons (Apache License 2.0)
-- Python logo — https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg  
-  Python is a trademark of the Python Software Foundation.
+- Python logo — https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg (GPL v2 or later)
+  Note: Python is a trademark of the Python Software Foundation.
 
 ## License Compliance
 

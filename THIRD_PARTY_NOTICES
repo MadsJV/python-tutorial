@@ -53,19 +53,18 @@ Notes:
 4. Python Logo (Wikimedia Commons)
 ------------------------------------------------------------
 Asset: Python logo
-Local files used:
-- images/icons/pythonLogo.png
-- images/pictures/pythonLogo.svg
-
 Source:
 https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg
 
-License: As stated on Wikimedia Commons file page (varies by asset metadata)
+License: GNU General Public License v2 or later (GPL-2.0+)
+https://www.gnu.org/licenses/gpl-2.0.html
 
-Additional notes:
-- The Python logo is a trademark of the Python Software Foundation.
-- Trademark use does not imply endorsement.
-- Ensure compliance with both the file’s stated license and trademark guidelines.
+Notes:
+- The Python logo is available under GPL v2 or later
+- The Python logo is a trademark of the Python Software Foundation
+- Trademark use does not imply endorsement
+- Ensure compliance with both the GPL license and Python Software Foundation trademark guidelines
+- For more information on permitted uses, see: https://www.python.org/about/legal/
 
 ------------------------------------------------------------
 GENERAL NOTES
