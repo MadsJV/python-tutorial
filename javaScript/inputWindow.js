@@ -1,3 +1,5 @@
+// Currently unimplemented
+
 let inputWindowTemplatePromise;
 let currentInputPrompt = "";
 let inputResolver = null;
