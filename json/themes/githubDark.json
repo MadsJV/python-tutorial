@@ -1,0 +1,17 @@
+{
+  "base": "vs-dark",
+  "inherit": true,
+  "colors": {
+    "editor.background": "#24292e",
+    "editor.foreground": "#e1e4e8",
+    "editorLineNumber.foreground": "#444d56",
+    "editorLineNumber.activeForeground": "#e1e4e8",
+    "editor.lineHighlightBackground": "#2b3036"
+  },
+  "rules": [
+    { "token": "comment", "foreground": "8b949e" },
+    { "token": "keyword", "foreground": "ff7b72" },
+    { "token": "string", "foreground": "a5d6ff" },
+    { "token": "number", "foreground": "79c0ff" }
+  ]
+}

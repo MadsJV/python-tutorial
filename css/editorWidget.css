@@ -1,0 +1,285 @@
+.editorContainer {
+    height: 25em;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 32px;
+}
+
+.editor {
+    width: 50vw;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.editorWrapper {
+    position: relative;
+    height: 25em;
+}
+
+.editorLoader {
+    position: absolute;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    background: linear-gradient(90deg, #24292e 25%, #3d444b 37%, #24292e 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+
+.output {
+    width: 30vw;
+    height: 100%;
+    background-color: #111;
+    color: whitesmoke;
+    font-family: MesloLGS NF, monospace;
+    font-size: .85em;
+    overflow: scroll;
+    margin: 0;
+    border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+}
+
+.plotWindow {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    width: min(44rem, calc(100vw - 4rem));
+    height: min(32rem, calc(100vh - 4rem));
+    display: flex;
+    flex-direction: column;
+    background-color: #151515;
+    border: 1px solid #4a4a4a;
+    border-radius: var(--borderRadius);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.plotWindow[hidden] {
+    display: none;
+}
+
+.plotWindowHeader {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.75rem;
+    color: whitesmoke;
+    background-color: #242424;
+    border-bottom: 1px solid #3a3a3a;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.plotWindow.isDragging .plotWindowHeader {
+    cursor: grabbing;
+}
+
+body.isDraggingPlotWindow {
+    user-select: none;
+}
+
+.plotWindowActions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.plotWindowButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: grid;
+    place-items: center;
+    color: whitesmoke;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.plotWindowButton:hover {
+    background-color: #333;
+}
+
+.plotWindowBody {
+    min-height: 0;
+    flex: 1;
+    display: grid;
+    place-items: center;
+    overflow: auto;
+}
+
+.plotWindowImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+
+.inputWindow {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    width: min(32rem, calc(100vw - 4rem));
+    display: flex;
+    flex-direction: column;
+    background-color: #151515;
+    border: 1px solid #4a4a4a;
+    border-radius: var(--borderRadius);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.inputWindow[hidden] {
+    display: none;
+}
+
+.inputWindowHeader {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 0.75rem;
+    color: whitesmoke;
+    background-color: #242424;
+    border-bottom: 1px solid #3a3a3a;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.inputWindow.isDragging .inputWindowHeader {
+    cursor: grabbing;
+}
+
+body.isDraggingInputWindow {
+    user-select: none;
+}
+
+.inputWindowActions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.inputWindowButton {
+    width: 1.75rem;
+    height: 1.75rem;
+    display: grid;
+    place-items: center;
+    color: whitesmoke;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.inputWindowButton:hover {
+    background-color: #333;
+}
+
+.inputWindowBody {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: whitesmoke;
+}
+
+.inputWindowPrompt {
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}
+
+.inputWindowInputContainer {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.inputWindowInput {
+    flex: 1;
+    padding: 0.5rem;
+    background-color: #1e1e1e;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.inputWindowInput:focus {
+    outline: none;
+    border-color: #888;
+    background-color: #242424;
+}
+
+.inputWindowSubmit {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.inputWindowSubmit:hover {
+    background-color: #45a049;
+}
+
+
+
+.toolbar {
+    width: 2em;
+    height: 100%;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+}
+
+.toolbarButton {
+    font-size: 1em;
+    width: 2em;
+    aspect-ratio: 1/1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.runButton {
+    background-color: #4CAF50;
+    border-radius: var(--borderRadius) 0 0 0;
+}
+
+.resetButton {
+    background-color: #008CBA;
+}
+
+.clearButton {
+    background-color: #f1554a;
+}

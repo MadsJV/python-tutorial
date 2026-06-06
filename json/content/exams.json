@@ -1,0 +1,104 @@
+{
+    "exams": [
+        {
+            "title": "R2 V2025 Eksamen",
+            "id": "r2-v2025-exam",
+            "subject": "Math R2",
+            "year": 2025,
+            "season": "spring",
+            "examType": "exam",
+            "tasks": [
+                {
+                    "taskId": 3,
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "En elev arbeider med en tallfølge og har skrevet denne koden:"
+                        },
+                        {
+                            "type": "code",
+                            "language": "python",
+                            "file": "3a"
+                        },
+                        {
+                            "type": "question",
+                            "label": "a",
+                            "content": [
+                                "Beskriv mønsteret i tallfølgen eleven arbeider med.",
+                                "Hva blir resultatet når koden kjøres?"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "content": "Eleven har også skrevet denne koden:"
+                        },
+                        {
+                            "type": "code",
+                            "language": "python",
+                            "file": "3b"
+                        },
+                        {
+                            "type": "question",
+                            "label": "b",
+                            "content": [
+                                "Hva ønsker eleven nå å finne ut?",
+                                "Hva blir resultatet når koden kjøres?"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "taskId": 6,
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Casper har skrevet denne koden:"
+                        },
+                        {
+                            "type": "code",
+                            "language": "python",
+                            "file": "6"
+                        },
+                        {
+                            "type": "question",
+                            "label": "",
+                            "content": [
+                                "Bestem verdien som skrives ut når koden kjøres."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "test 1",
+            "id": "test-1",
+            "subject": "Math R2",
+            "year": 2025,
+            "season": "spring",
+            "examType": "exam",
+            "tasks": [
+                {
+                    "taskId": 1,
+                    "blocks": [
+                        {
+                            "type": "text",
+                            "content": "Dette er en test oppgave"
+                        },
+                        {
+                            "type": "code",
+                            "language": "python",
+                            "file": "test"
+                        },
+                        {
+                            "type": "question",
+                            "content": [
+                                "Hva blir resultatet når koden kjøres?"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

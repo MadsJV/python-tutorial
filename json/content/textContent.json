@@ -1,0 +1,269 @@
+{
+    "lessons": [
+        {
+            "chapter": 1,
+            "subTitle": "print() og variabler",
+            "text": {
+                "1": "[key]print()[/key] brukes for å vise tekst eller verdier i terminalen. Tekst må stå i anførselstegn, mens tall kan skrives direkte. Hver [key]print()[/key]-linje lager en ny linje i output. Hvis du vil lage en ekstra linje, kan du bruke [key]\\n[/key] inni teksten.",
+                "2": "En variabel er en verdi med et navn. Verdien kan for eksempel være tekst (str), heltall (int), desimaltall (float) eller en boolsk verdi (bool; enten [key]True[/key] eller [key]False[/key]). Når du bruker [key]print(variabel)[/key] uten anførselstegn, skriver Python ut verdien lagret i variabelen. Man kan skrive inn kommentarer i koden med [key]#[/key], hvor alt på samme linje etter [key]#[/key] ignoreres",
+                "3": "Variabler kan få en ny verdi senere i programmet. Når du skriver [key]navn = nyVerdi[/key], erstattes den gamle verdien.",
+                "4": "En [key]f-string[/key] lar deg blande tekst og variabler på en ryddig måte. Du skriver [key]f[/key] foran anførselstegnene og setter variabelnavn eller uttrykk inni krøllparenteser: [key]{}[/key]. Om du glemmer [key]f[/key]-en behandler Python det som vanlig tekst, og skriver ut akkurat det du skrev, inkludert krøllparentesene."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "print()",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "printText"
+                },
+                {
+                    "type": "text",
+                    "name": "Variabler & typer",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "variables"
+                },
+                {
+                    "type": "text",
+                    "name": "Endre variabler",
+                    "content": "3"
+                },
+                {
+                    "type": "code",
+                    "file": "updateVariables"
+                },
+                {
+                    "type": "text",
+                    "name": "f-strings",
+                    "content": "4"
+                },
+                {
+                    "type": "code",
+                    "file": "fString"
+                }
+            ]
+        },
+        {
+            "chapter": 2,
+            "subTitle": "Matematiske operasjoner",
+            "text": {
+                "1": "Du kan endre verdien til en variabel med [key]+=[/key] og [key]-=[/key]. Når du bruker disse operatorene på tall, øker eller minker verdien, mens på en streng [key]konkatineres[/key] teksten, det vil si at teksten legges til. Vær obs på at du ikke kan bruke [key]-=[/key] på tekst, siden det ikke er mulig å ukonkatinere.",
+                "2": "I tillegg til de vanlige operatorene [key]+[/key], [key]-[/key], [key]*[/key] og [key]/[/key], har python også heltallsdivisjon [key]//[/key], modulo [key]%[/key], og opphøyning [key]**[/key]."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "Øke og minke verdier",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "incrementDecrement"
+                },
+                {
+                    "type": "text",
+                    "name": "Matematiske operatorer",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "mathOperators"
+                }
+            ]
+        },
+        {
+            "chapter": 3,
+            "subTitle": "Betingelser og boolske uttrykk",
+            "text": {
+                "1": "Med [key]if[/key], [key]elif[/key] (else if) og [key]else[/key] kan programmet ta valg. Det er viktig å indentere koden som skal kjøres om en betingelse oppfylles. Bruk [key]tab[/key]-knappen eller [key]4 mellomrom[/key] for å indentere.",
+                "2": "Betingelser bygges med sammenligningsoperatorere [key]>[/key], [key]<[/key], [key]>=[/key], [key]<=[/key], [key]==[/key] og [key]!=[/key]. Du kan kombinere flere tester med [key]and[/key], [key]or[/key] og [key]not[/key] når ett valg avhenger av flere ting samtidig."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "if, elif og else",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "ifElse"
+                },
+                {
+                    "type": "text",
+                    "name": "Boolske uttrykk",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "booleanOperators"
+                }
+            ]
+        },
+        {
+            "chapter": 4,
+            "subTitle": "Lister og dictionaries",
+            "text": {
+                "1": "[key]Lister[/key] ([key]arrays[/key]) brukes til å lagre flere verdier i én variabel. Verdiene lagres i rekkefølgen de legges inn og kan være av ulike datatyper. Nye elementer kan legges til med [key].append()[/key], og lengden på listen kan hentes med [key]len()[/key].",
+                "2": "Du kan hente verdier fra en liste ved å bruke en [key]indeks[/key]. Indekser starter på [key]0[/key], så første element har indeks [key]0[/key], andre har indeks [key]1[/key], osv. Negative indekser teller baklengs, slik at [key]-1[/key] er siste element, [key]-2[/key] nest siste, osv. Verdier kan endres ved å tilordne en ny verdi til en bestemt indeks.",
+                "3": "Med [key]str.join(array)[/key] kan du slå sammen alle elementene i en liste til én tekststreng. Teksten du skriver foran [key].join()[/key] blir satt inn mellom hvert element. For eksempel vil [key]\", \".join(liste)[/key] sette inn komma og mellomrom mellom alle verdiene i listen.",
+                "4": "En [key]dictionary[/key] lagrer data som [key]nøkkel-verdi-par[/key]. Hver nøkkel må være unik, og brukes til å hente den tilhørende verdien. Dictionaries er nyttige når data har navn eller kategorier som passer bedre enn nummererte indekser.",
+                "5": "Du kan legge til eller endre verdier i en dictionary ved å skrive [key]dictionary[nøkkel] = verdi[/key]. Verdier hentes på samme måte ved å bruke nøkkelen. Dictionaries brukes ofte til å samle strukturert informasjon om objekter, personer eller innstillinger."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "Lister",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "lists"
+                },
+                {
+                    "type": "text",
+                    "name": "Indeksering",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "indexing"
+                },
+                {
+                    "type": "text",
+                    "name": "join()",
+                    "content": "3"
+                },
+                {
+                    "type": "code",
+                    "file": "join"
+                },
+                {
+                    "type": "text",
+                    "name": "Dictionaries",
+                    "content": "4"
+                },
+                {
+                    "type": "code",
+                    "file": "dictionaries"
+                },
+                {
+                    "type": "text",
+                    "name": "Dictionary-operasjoner",
+                    "content": "5"
+                },
+                {
+                    "type": "code",
+                    "file": "dictOperations"
+                }
+            ]
+        },
+        {
+            "chapter": 5,
+            "subTitle": "Løkker",
+            "text": {
+                "1": "En [key]for[/key]-løkke brukes når du vil gjenta kode et bestemt antall ganger eller gå gjennom en samling verdier. [key]range()[/key] lager ofte tallrekken løkken skal bruke. Syntaks er [key]range(start, stop, step)[/key], hvor [key]start[/key] er det første tallet, [key]stop[/key] er det første tallet som ikke skal brukes, og [key]step[/key] er hvor mye tallet skal øke for hver runde. Det eneste du må legge inn er [key]stop[/key]. Om det er færre enn 3 parametere lagt inn er defaulten at [key]start = 0[/key] og [key]step = 1[/key].",
+                "2": "En [key]while[/key]-løkke fortsetter så lenge en betingelse er sann. Det gjør den fleksibel, men du må passe på at noe inni løkken endrer betingelsen. [key]break[/key] kan brukes for å stoppe en løkke tidligere når du har funnet det du leter etter."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "for-løkker",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "forLoop"
+                },
+                {
+                    "type": "text",
+                    "name": "while-løkker",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "whileLoop"
+                }
+            ]
+        },
+        {
+            "chapter": 6,
+            "subTitle": "Funksjoner",
+            "text": {
+                "1": "En funksjon lar deg bruke en blokk kode flere ganger. Du lager en funksjon med [key]def[/key], gir den et navn og legger koden som skal kjøres inni funksjonen, husk å indentere. Det gjør programmet ryddigere og lettere å lese. Funksjoner kan også ta imot parametere, dette legges inn i definisjonen inni parentesene [key]()[/key], hvor du gir hvert parameter et navn. De fungerer som lokale variabler kun funksjonen kan bruke. Man legger inn parameterene når man kaller funksjonen.",
+                "2": "Funksjoner kan også sende tilbake et svar med [key]return[/key]. Og du kan bruke funksjoner inni hverandre, så lenge funksjoner som bruker er definert før den brukes."
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "Definisjon og parametere",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "basicFunctions"
+                },
+                {
+                    "type": "text",
+                    "name": "return",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "returnParameters"
+                }
+            ]
+        },
+        {
+            "chapter": 7,
+            "subTitle": "Importering av biblioteker",
+            "text": {
+                "1": "Med [key]import[/key] kan du bruke ferdige verktøy og funksjoner fra andre biblioteker. Biblioteket [key]math[/key] inneholder mange nyttige matematiske funksjoner som kvadratrøtter, sinus og pi. Merk deg at du òg kan lage røtter uten math-biblioteket ved å opphøye i en brøk eller desimaltall. [key]import[/key] må alltid være først i koden.",
+                "2": "Med [key]numpy[/key] kan man generere arrays med uniformt fordelte tall med funksjonen [key]numpy.linspace(start, stop, antall)[/key], hvor [key]start[/key] og [key]stopp[/key] er ekstremene i arrayet, mens [key]antall[/key] er hvor mange tall som skal genereres. Dette er nyttig for å lage x-koordinater til en linje i en graf. Desto flere punkter man har desto smoothere blir linjen.",
+                "3": "Biblioteket [key]matplotlib.pyplot[/key] brukes for å lage grafer og diagrammer. Siden [key]matplotlib.pyplot[/key] har så langt navn kan man bruke [key]as[/key] for å gi den et nytt navn i koden.\n\nFor følgende eksempler kommer jeg til å bruke [key]plt[/key] som [key]matplotlib.pyplot[/key].\n\n[key].plot(x, y) [/key] brukes for å lage en linje hvor parameterne [key]x[/key] og [key]y[/key], som må være lister, definerer punktene linjen går gjennom. Mellom punktene interpoleres linjen. I tillegg når man kjører funksjonen kan man legge til argumenter som [key]color[/key], [key]linewidth[/key], [key]linestyle[/key], [key]marker[/key], [key]markersize[/key], [key]markerfacecolor[/key], [key]markeredgecolor[/key] eller [key]markeredgewidth[/key]. For å bruke et av argumentene må du skrive [key]argument=verdi[/key], for eksempel [key]color=\"blue\"[/key]\n\n[key].title()[/key], [key].xlabel[/key] og [key].ylabel[/key] brukes for å navngi grafen og aksene. Man kan også navngi enkeltlinjer med [key]label[/key]-argumentet, men for at det skal vises må du kjøre [key].legend()[/key]"
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "math",
+                    "content": "1"
+                },
+                {
+                    "type": "code",
+                    "file": "mathImport"
+                },
+                {
+                    "type": "text",
+                    "name": "numpy",
+                    "content": "2"
+                },
+                {
+                    "type": "code",
+                    "file": "numpy"
+                },
+                {
+                    "type": "text",
+                    "name": "matplotlib",
+                    "content": "3"
+                },
+                {
+                    "type": "code",
+                    "file": "matplotlib"
+                },
+                {
+                    "type": "code",
+                    "file": "multiGraph"
+                }
+            ]
+        },
+        {
+            "chapter": 8,
+            "subTitle": "Eksamensoppgaver",
+            "blockFlow": []
+        }
+    ]
+}

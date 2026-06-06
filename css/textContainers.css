@@ -1,0 +1,68 @@
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.title {
+    color: var(--mainTextColor);
+    font-size: 6vw;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pythonLogoTitle {
+    transform: translateY(.5vw)
+}
+
+.subTitle {
+    position: relative;
+    scroll-margin-top: 1rem;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    padding-left: 1em;
+    align-items: center;
+    color: var(--mainTextColor);
+    overflow: hidden;
+}
+
+.subTitle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    --stripeThickness: .2em;
+    background: repeating-linear-gradient(45deg, cadetblue 0 var(--stripeThickness), darkcyan var(--stripeThickness) calc(2 * var(--stripeThickness)));
+    mask-image: linear-gradient(90deg, black 0%, transparent 50%);
+}
+
+.text {
+    font-size: 16px;
+    font-family: 'Cascade', monospace;
+    color: var(--mainTextColor);
+    width: 70vw;
+    margin-bottom: 5px;
+    padding-top: 12px;
+}
+
+.keyText {
+    font-weight: bold;
+    color: var(--mainTextColor);
+    background-color:dodgerblue;
+    border-radius: 3px;
+}
+
+.spacer {
+    padding: .3em;
+}
+
+.largeSpacer {
+    padding: 1em;
+}

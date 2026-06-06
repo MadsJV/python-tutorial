@@ -1,0 +1,9 @@
+const demoPythonPath = "../python/demos";
+const examPythonPath = "../python/examTasks"
+const pyodideInitPath = "../python/initPyodide/matplotlibHook.py";
+const plotWindowTemplatePath = "plotWindow.html";
+const plotTabTemplatePath = "plotTab.html";
+const inputWindowTemplatePath = "inputWindow.html";
+const defaultEditorTheme = "githubDark"
+const defaultCodeDisplayBlockTheme = "githubDark" // to be implemented
+const fallbackDemo = "chapter0/emptyDemo"
