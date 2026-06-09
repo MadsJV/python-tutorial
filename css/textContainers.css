@@ -27,18 +27,23 @@
     height: auto;
     display: flex;
     justify-content: left;
-    padding-left: 1em;
+    padding-left: 2em;
     align-items: center;
-    color: var(--mainTextColor);
+    color: var(--subTitleMainTextColor);
     overflow: hidden;
 }
 
 .subTitle::before {
-    content: "";
+    content: attr(data-chapterDisplayNumber);
     position: absolute;
     inset: 0;
-    z-index: -1;
-    --stripeThickness: .2em;
+    z-index: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 56px;
+    font-weight: bolder;
+    color: var(--subTitleChapterNumberColor);
     background: repeating-linear-gradient(45deg, var(--subTitleStripe1) 0 var(--stripeThickness), var(--subTitleStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
     mask-image: linear-gradient(90deg, black 0%, transparent 50%);
 }

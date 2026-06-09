@@ -1,11 +1,14 @@
 :root {
     --borderRadius: 8px;
+    --stripeThickness: 4px;
 
     --mainTextColor: whitesmoke;
     --keyTextColor: whitesmoke;
     --keyTextBackground: dodgerblue;
-    --subTitleStripe1: cadetblue;
-    --subTitleStripe2: darkcyan;
+    --subTitleStripe1: rgba(0, 0, 0, .05);
+    --subTitleStripe2: rgba(0, 0, 0, .1);
+    --subTitleChapterNumberColor: rgba(30, 30, 30, .4);
+    --subTitleMainTextColor: rgba(255, 255, 255, .5);
 
     --editorLoaderDefault: #24292e;
     --editorLoaderHighlight: #3d444b;
@@ -51,7 +54,6 @@ html {
 }
 
 body {
-    --stripeThickness: .2em;
     background: repeating-linear-gradient(-45deg, var(--mainBackgroundStripe1) 0 var(--stripeThickness), var(--mainBackgroundStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
     height: auto;
 }

@@ -28,11 +28,16 @@ function createTextBox(text, contentId) {
     return element;
 }
 
+function stylizeChapterNumber(chapter, length) {
+    return String(chapter).padStart(length, "0");
+}
+
 function createSubTitle(text, chapter) {
     const element = document.createElement("div");
     element.className = "subTitle";
     element.textContent = text;
     element.setAttribute("data-chapter", chapter);
+    element.setAttribute("data-chapterDisplayNumber", stylizeChapterNumber(chapter, 2));
     element.id = `chapter${chapter}`;
     return element;
 }
@@ -120,8 +125,7 @@ function constructTextContent() {
         const linkCardContainer = [];
 
         for (const chapter of lessons) {
-            let currentChapter = `${chapter.chapter}: ${chapter.subTitle}`
-            currentContent.push(createSubTitle(currentChapter, chapter.chapter));
+            currentContent.push(createSubTitle(chapter.subTitle, chapter.chapter));
 
             for (const block of chapter.blockFlow) {
                 if (block.type === "text") {
