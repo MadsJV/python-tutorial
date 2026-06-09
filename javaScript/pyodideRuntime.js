@@ -9,7 +9,6 @@ async function initPyodide() {
 
     await pyodide.runPythonAsync(matplotlibHook);
     
-
     pyodideReady = true;
 }
 

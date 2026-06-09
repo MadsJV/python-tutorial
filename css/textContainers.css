@@ -39,7 +39,7 @@
     inset: 0;
     z-index: -1;
     --stripeThickness: .2em;
-    background: repeating-linear-gradient(45deg, cadetblue 0 var(--stripeThickness), darkcyan var(--stripeThickness) calc(2 * var(--stripeThickness)));
+    background: repeating-linear-gradient(45deg, var(--subTitleStripe1) 0 var(--stripeThickness), var(--subTitleStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
     mask-image: linear-gradient(90deg, black 0%, transparent 50%);
 }
 
@@ -54,7 +54,7 @@
 
 .keyText {
     font-weight: bold;
-    color: var(--mainTextColor);
-    background-color:dodgerblue;
+    color: var(--keyTextColor);
+    background-color:var(--keyTextBackground);
     border-radius: 3px;
 }

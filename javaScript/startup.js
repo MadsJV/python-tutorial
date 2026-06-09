@@ -4,7 +4,13 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     require.config({
         paths: {
-            vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs"
+            vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs",
+            stackframe: "https://unpkg.com/stackframe@1/dist/stackframe",
+            "error-stack-parser": "https://unpkg.com/error-stack-parser@2/dist/error-stack-parser"
+        },
+        shim: {
+            stackframe: { exports: "StackFrame" },
+            "error-stack-parser": { deps: ["stackframe"], exports: "ErrorStackParser" }
         }
     });
 
@@ -12,7 +18,6 @@ window.addEventListener("DOMContentLoaded", async () => {
         require(["vs/editor/editor.main"], async () => {
             try {
                 await initEditors(pyodidePromise);
-                console.log("initEditors() executed")
                 resolve();
             } catch (e) {
                 console.error("Failed to init editors:", e);
@@ -20,7 +25,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             }
         });
     });
-    await loadExamTasks();
 });
 
 function fetchWrappers() {

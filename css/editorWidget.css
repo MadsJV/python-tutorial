@@ -21,12 +21,12 @@
 
 .editorLoader {
     position: absolute;
-    color: whitesmoke;
+    color: var(--mainTextColor);
     display: flex;
     align-items: center;
     justify-content: center;
     inset: 0;
-    background: linear-gradient(90deg, #24292e 25%, #3d444b 37%, #24292e 63%);
+    background: linear-gradient(90deg, var(--editorLoaderDefault) 25%, var(--editorLoaderHighlight) 37%, var(--editorLoaderDefault) 63%);
     background-size: 400% 100%;
     animation: shimmer 1.2s ease infinite;
 }
@@ -40,7 +40,7 @@
     width: 30vw;
     height: 100%;
     background-color: #111;
-    color: whitesmoke;
+    color: var(--mainTextColor);
     font-family: MesloLGS NF, monospace;
     font-size: .85em;
     overflow: scroll;
@@ -52,15 +52,15 @@
     position: fixed;
     right: 2rem;
     bottom: 2rem;
-    z-index: 10;
+    z-index: 25;
     width: min(44rem, calc(100vw - 4rem));
     height: min(32rem, calc(100vh - 4rem));
     display: flex;
     flex-direction: column;
-    background-color: #151515;
-    border: 1px solid #4a4a4a;
+    background: var(--floatingWindowBackground);
+    border: 1px solid var(--floatingWindowBorderColor);
     border-radius: var(--borderRadius);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1rem 3rem var(--floatingWindowBoxShadow);
     overflow: hidden;
 }
 
@@ -75,9 +75,9 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 0 0.75rem;
-    color: whitesmoke;
-    background-color: #242424;
-    border-bottom: 1px solid #3a3a3a;
+    color: var(--mainTextColor);
+    background-color: var(--floatingWindowHeaderBackgroundColor);
+    border-bottom: 1px solid var(--floatingWindowHeaderBorderColor);
     cursor: grab;
     user-select: none;
     touch-action: none;
@@ -102,9 +102,9 @@ body.isDraggingPlotWindow {
     height: 1.75rem;
     display: grid;
     place-items: center;
-    color: whitesmoke;
-    background-color: transparent;
-    border: 1px solid #555;
+    color: var(--mainTextColor);
+    background-color: var(--floatingWindowButton);
+    border: 1px solid var(--floatingWindowButtonBorder);
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
@@ -112,14 +112,15 @@ body.isDraggingPlotWindow {
 }
 
 .plotWindowButton:hover {
-    background-color: #333;
+    background-color: var(--floatingWindowButtonHover);
 }
 
 .plotWindowBody {
     min-height: 0;
     flex: 1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: top;
+    justify-content: center;
     overflow: auto;
 }
 
@@ -127,9 +128,9 @@ body.isDraggingPlotWindow {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    background-color: white;
 }
 
+/*
 .inputWindow {
     position: fixed;
     right: 2rem;
@@ -138,10 +139,10 @@ body.isDraggingPlotWindow {
     width: min(32rem, calc(100vw - 4rem));
     display: flex;
     flex-direction: column;
-    background-color: #151515;
-    border: 1px solid #4a4a4a;
+    background-color: var(--floatingWindowBackground);
+    border: 1px solid var(--floatingWindowBorderColor);
     border-radius: var(--borderRadius);
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
+    box-shadow: 0 1rem 3rem var(--floatingWindowBoxShadow);
     overflow: hidden;
 }
 
@@ -156,9 +157,9 @@ body.isDraggingPlotWindow {
     justify-content: space-between;
     gap: 1rem;
     padding: 0 0.75rem;
-    color: whitesmoke;
-    background-color: #242424;
-    border-bottom: 1px solid #3a3a3a;
+    color: var(--mainTextColor);
+    background-color: var(--floatingWindowHeaderBackgroundColor);
+    border-bottom: 1px solid var(--floatingWindowHeaderBorderColor);
     cursor: grab;
     user-select: none;
     touch-action: none;
@@ -246,13 +247,12 @@ body.isDraggingInputWindow {
 .inputWindowSubmit:hover {
     background-color: #45a049;
 }
-
-
+*/
 
 .toolbar {
     width: 2em;
     height: 100%;
-    background-color: cadetblue;
+    background-color: var(--toolbarBackground);
     display: flex;
     flex-direction: column;
     z-index: 1;
@@ -263,7 +263,7 @@ body.isDraggingInputWindow {
     font-size: 1em;
     width: 2em;
     aspect-ratio: 1/1;
-    color: white;
+    color: var(--mainTextColor);
     border: none;
     cursor: pointer;
     display: flex;
@@ -272,14 +272,14 @@ body.isDraggingInputWindow {
 }
 
 .runButton {
-    background-color: #4CAF50;
+    background-color: var(--runButtonColor);
     border-radius: var(--borderRadius) 0 0 0;
 }
 
 .resetButton {
-    background-color: #008CBA;
+    background-color: var(--resetButtonColor);
 }
 
 .clearButton {
-    background-color: #f1554a;
+    background-color: var(--clearButtonColor);
 }

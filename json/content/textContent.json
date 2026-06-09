@@ -263,7 +263,33 @@
         {
             "chapter": 8,
             "subTitle": "Eksamensoppgaver",
-            "blockFlow": []
+            "text": {
+                "1": "test text"
+            },
+            "blockFlow": [
+                {
+                    "type": "text",
+                    "name": "test",
+                    "content": "1"
+                },
+                {
+                    "type": "linkCardContainer",
+                    "links": [
+                        {
+                            "name": "test 1",
+                            "source": "google.com" 
+                        },
+                        {
+                            "name": "test 2",
+                            "source": "bing.com"
+                        }
+                    ]
+                },
+                {
+                    "type": "code",
+                    "file": "empty"
+                }
+            ]
         }
     ]
 }

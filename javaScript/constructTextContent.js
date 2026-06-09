@@ -44,6 +44,28 @@ function createEditor(data, chapter) {
     return element;
 }
 
+function createLinkCard(text, link) {
+    const card = document.createElement("div");
+    const linkElement = document.createElement("a");
+    card.className = "linkCard";
+    linkElement.className = "link";
+    linkElement.href = link
+    linkElement.textContent = text;
+    card.appendChild(linkElement);
+    return card
+}
+
+function createLinkCardContainer(block) {
+    const container = document.createElement("div");
+    container.className = "linkCardContainer";
+    const linkCards = [];
+    for (const link of block.links) {
+        linkCards.push(createLinkCard(link.name, link.source))
+    };
+    container.replaceChildren(...linkCards);
+    return container;
+}
+
 function createElement(type, className, href, textContent, clickEventTargetScrollElement = null, ) {
     const htmlElement = document.createElement(type);
     htmlElement.className = className;
@@ -95,6 +117,7 @@ function constructTextContent() {
         if (!lessons) return;
 
         const currentContent = [];
+        const linkCardContainer = [];
 
         for (const chapter of lessons) {
             let currentChapter = `${chapter.chapter}: ${chapter.subTitle}`
@@ -107,8 +130,12 @@ function constructTextContent() {
                 if (block.type === "code") {
                     currentContent.push(createEditor(block.file, chapter.chapter));
                 }
+                if (block.type === "linkCardContainer") {
+                    currentContent.push(createLinkCardContainer(block))
+                }
             }
         }
+        currentContent.push(...linkCardContainer)
         parentContainer.replaceChildren(...currentContent);
         loadSidebarChapters(lessons);
 });}

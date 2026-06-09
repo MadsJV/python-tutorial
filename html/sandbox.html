@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandbox</title>
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/sandbox.css">
+    <link rel="icon" type="image/png" href="../images/icons/pythonLogo.png">
+</head>
+<body>
+    <div class="toolbar">
+        <button title="Run Code" class="toolbarButton runButton">▶</button>
+        <button title="Clear Editor" class="toolbarButton clearButton"><img src="../images/icons/delete.svg"></button>
+        <button title="Toggle Output Window" class="toolbarButton toggleOutputWindowButton"><img src="../images/icons/terminalWindow.svg"></button>
+        <button title="Save Code" class="toolbarButton saveButton"><img src="../images/icons/download.svg"></button>
+        <button title="Upload Code" class="toolbarButton uploadButton"><img src="../images/icons/upload.svg"></button>
+        <div class="toolbarSpacer"></div>
+        <a title="Back To Main Page" href="index.html" class="toolbarButton homeButton"><img src="../images/icons/home.svg"></a>
+    </div>
+    <div class="editorWrapper">
+        <div id="editor"></div>
+    </div>
+    <div id="outputWindow" class="outputWindow hidden">
+        <div class="outputWindowHeader">
+            <span>Output</span>
+            <button class="outputWindowCloseButton">×</button>
+        </div>
+        <pre id="output" class="output"></pre>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
+    <script src="../javaScript/fetchTheme.js"></script>
+    <script src="../javaScript/fetchUtils.js"></script>
+    <script src="../javaScript/appConfig.js"></script>
+    <script src="../javaScript/plotWindow.js"></script>
+    <script src="../javaScript/sandboxRuntime.js"></script>
+    <script>
+        require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs' } });
+        require(['vs/editor/editor.main'], function() {
+            window.monacoEditor = monaco.editor.create(document.getElementById('editor'), {
+                value: '',
+                language: 'python',
+                theme: 'vs-dark',
+                fontSize: 14,
+            });
+            loadTheme('githubDark');
+            initSandbox();
+        });
+    </script>
+</body>
+</html>

@@ -1,6 +1,42 @@
 :root {
     --borderRadius: 8px;
+
     --mainTextColor: whitesmoke;
+    --keyTextColor: whitesmoke;
+    --keyTextBackground: dodgerblue;
+    --subTitleStripe1: cadetblue;
+    --subTitleStripe2: darkcyan;
+
+    --editorLoaderDefault: #24292e;
+    --editorLoaderHighlight: #3d444b;
+
+    --floatingWindowBackground: transparent;
+    --floatingWindowBorderColor: #4a4a4a;
+    --floatingWindowHeaderBackgroundColor: #242424;
+    --floatingWindowHeaderBorderColor: #3a3a3a;
+    --floatingWindowBoxShadow: rgba(0, 0, 0, .45);
+    --floatingWindowButton: transparent;
+    --floatingWindowButtonHover: #333;
+    --floatingWindowButtonBorder: #555;
+
+    --toolbarBackground: cadetblue;
+    --defaultButtonColor: transparent;
+    --runButtonColor: #4CAF50;
+    --resetButtonColor: #008CBA;
+    --clearButtonColor: #f1554a;
+    --toggleOutputWindowButtonColor: coral;
+    --saveButtonColor: cornflowerblue;
+    --uploadButtonColor: hotpink;
+
+    --mainBackgroundStripe1: #404040;
+    --mainBackgroundStripe2: #3e3e3e;
+
+    --sidebarBackgroundGradientExtreme1: rgba(0, 0, 0, .2);
+    --sidebarBackgroundGradientExtreme2: rgba(20, 20, 20, .2);
+    --sidebarBoxShadow: rgba(0, 0, 0, .5);
+    --sidebarItemHover: rgba(255, 255, 255, .14);
+    --headerNavigationItemBackground: transparent;
+
 } 
 
 * {
@@ -16,7 +52,7 @@ html {
 
 body {
     --stripeThickness: .2em;
-    background: repeating-linear-gradient(-45deg, #404040 0 var(--stripeThickness), #3e3e3e var(--stripeThickness) calc(2 * var(--stripeThickness)));
+    background: repeating-linear-gradient(-45deg, var(--mainBackgroundStripe1) 0 var(--stripeThickness), var(--mainBackgroundStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
     height: auto;
 }
 

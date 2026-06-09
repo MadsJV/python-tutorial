@@ -15,9 +15,9 @@
     <div class="sidebarContainer">
         <nav class="sidebar">
             <div class="sideBarHeader">
-                <div class="navigationCurrentItemIndicator"></div>
-                <img class="chapterList headerNavigationItem" src="../images/icons/book.svg" alt="Chapter List" title="Chapter List"/>
-                <img class="settings headerNavigationItem" src="../images/icons/settings.svg" alt="Settings" title="Settings"/>
+                <button class="chapterList headerNavigationItem" alt="Chapter List" title="Chapter List"><img class="navigationItemIcon" src="../images/icons/book.svg" /></button>
+                <button class="settings headerNavigationItem" alt="Settings" title="Settings"><img class="navigationItemIcon" src="../images/icons/settings.svg"/></button>
+                <a class="sandboxLink headerNavigationItem" alt="Experiment" title="Experiment" href="sandbox.html"><img class="navigationItemIcon" src="../images/icons/experiment.svg"></a>
             </div>
             <div class="sidebarChapterList"></div>
         </nav>
@@ -29,24 +29,6 @@
             <img class="pythonLogoTitle" src="../images/pictures/pythonLogo.svg" alt="Python Logo">
         </div>
         <div class="mainContentContainer"></div>
-        <div class="examSelectorContainer">
-            <div class="examSelectorWrapper">
-                <div class="examSelectorIconWrapper">
-                    <img class="examSelectorIcon" src="../images/icons/documentSearch.svg">
-                </div>
-                <button class="confirmButtonExamSelector" onClick="renderExamTask('r2-v2025-exam')">test</button>
-                <input class="examSelectorUserInterface" placeholder="Velg en eksam" list="selectableExams"/>
-                <datalist id="selectableExams">
-                    <option value="R2 V2025 Eksamen"></option>
-                    <option value="R1 V2025 Eksamen"></option>
-                    <option value="1T V2025 Tentamen"></option>
-                    <option value="R2 H2025 Eksamen"></option>
-                </datalist>
-            </div>
-            <div class="wrapperFlexGrowAnimationHelper"></div>
-        </div>
-        <div class="examContentContainer" id="examContentContainer">
-        </div>
         <div style="height: 10vh"></div>
     </div>
     <script src="../javaScript/populateEditorContainer.js"></script>
@@ -62,7 +44,6 @@
     <script src="../javaScript/pyodideRuntime.js"></script>
     <script src="../javaScript/editorRuntime.js"></script>
     <script src="../javaScript/codeDisplay.js"></script>
-    <script src="../javaScript/constructExamTask.js"></script>
     <script src="../javaScript/startup.js"></script>
 </body>
 </html>
