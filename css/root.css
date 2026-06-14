@@ -5,10 +5,10 @@
     --mainTextColor: whitesmoke;
     --keyTextColor: whitesmoke;
     --keyTextBackground: dodgerblue;
-    --subTitleStripe1: rgba(0, 0, 0, .05);
-    --subTitleStripe2: rgba(0, 0, 0, .1);
-    --subTitleChapterNumberColor: rgba(30, 30, 30, .4);
-    --subTitleMainTextColor: rgba(255, 255, 255, .5);
+    --subTitleStripe1: rgba(0, 0, 0, 0.05);
+    --subTitleStripe2: rgba(0, 0, 0, 0.1);
+    --subTitleChapterNumberColor: rgba(30, 30, 30, 0.35);
+    --subTitleMainTextColor: rgba(245, 245, 245, 0.7);
 
     --editorLoaderDefault: #24292e;
     --editorLoaderHighlight: #3d444b;
@@ -17,30 +17,30 @@
     --floatingWindowBorderColor: #4a4a4a;
     --floatingWindowHeaderBackgroundColor: #242424;
     --floatingWindowHeaderBorderColor: #3a3a3a;
-    --floatingWindowBoxShadow: rgba(0, 0, 0, .45);
+    --floatingWindowBoxShadow: rgba(0, 0, 0, 0.45);
     --floatingWindowButton: transparent;
     --floatingWindowButtonHover: #333;
     --floatingWindowButtonBorder: #555;
 
     --toolbarBackground: cadetblue;
     --defaultButtonColor: transparent;
-    --runButtonColor: #4CAF50;
-    --resetButtonColor: #008CBA;
+    --runButtonColor: #4caf50;
+    --resetButtonColor: #008cba;
     --clearButtonColor: #f1554a;
     --toggleOutputWindowButtonColor: coral;
     --saveButtonColor: cornflowerblue;
     --uploadButtonColor: hotpink;
+    --homeButtonColor: gold;
 
     --mainBackgroundStripe1: #404040;
     --mainBackgroundStripe2: #3e3e3e;
 
-    --sidebarBackgroundGradientExtreme1: rgba(0, 0, 0, .2);
-    --sidebarBackgroundGradientExtreme2: rgba(20, 20, 20, .2);
-    --sidebarBoxShadow: rgba(0, 0, 0, .5);
-    --sidebarItemHover: rgba(255, 255, 255, .14);
+    --sidebarBackgroundGradientExtreme1: rgba(0, 0, 0, 0.2);
+    --sidebarBackgroundGradientExtreme2: rgba(20, 20, 20, 0.2);
+    --sidebarBoxShadow: rgba(0, 0, 0, 0.5);
+    --sidebarItemHover: rgba(255, 255, 255, 0.14);
     --headerNavigationItemBackground: transparent;
-
-} 
+}
 
 * {
     box-sizing: border-box;
@@ -54,7 +54,12 @@ html {
 }
 
 body {
-    background: repeating-linear-gradient(-45deg, var(--mainBackgroundStripe1) 0 var(--stripeThickness), var(--mainBackgroundStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--mainBackgroundStripe1) 0 var(--stripeThickness),
+        var(--mainBackgroundStripe2) var(--stripeThickness)
+            calc(2 * var(--stripeThickness))
+    );
     height: auto;
 }
 
@@ -71,4 +76,49 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .mainWrapper,
+    .mainContainer {
+        view-transition-name: main-page;
+    }
+
+    .sidebarContainer {
+        view-transition-name: sidebar;
+    }
+
+    @view-transition {
+        navigation: auto;
+    }
+
+    ::view-transition-group(main-page) {
+        animation-duration: 0.5s;
+        animation-timing-function: ease;
+    }
+
+    ::view-transition-old(main-page) {
+        animation-name: slideOut;
+    }
+
+    ::view-transition-new(main-page) {
+        animation-name: slideIn;
+    }
+
+    ::view-transition-old(sidebar),
+    ::view-transition-new(sidebar) {
+        animation: none;
+    }
+
+    @keyframes slideOut {
+        to {
+            transform: translateY(-100vh);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(100vh);
+        }
+    }
 }

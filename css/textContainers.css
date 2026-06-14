@@ -33,7 +33,7 @@
     overflow: hidden;
 }
 
-.subTitle::before {
+.subTitle::after {
     content: attr(data-chapterDisplayNumber);
     position: absolute;
     inset: 0;
@@ -44,6 +44,13 @@
     font-size: 56px;
     font-weight: bolder;
     color: var(--subTitleChapterNumberColor);
+}
+
+.subTitle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: repeating-linear-gradient(45deg, var(--subTitleStripe1) 0 var(--stripeThickness), var(--subTitleStripe2) var(--stripeThickness) calc(2 * var(--stripeThickness)));
     mask-image: linear-gradient(90deg, black 0%, transparent 50%);
 }
